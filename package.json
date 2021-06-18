@@ -6,12 +6,16 @@
   "scripts": {
     "start": "npm-run-all --parallel start:ui start:services start:container",
     "build": "npm-run-all build:ui build:services build:container",
-    "start:ui":"npm --prefix src/ui run start",
-    "start:container":"npm --prefix src/container run start",
-    "start:services":"npm --prefix src/services run start",
-    "build:ui":"npm --prefix src/ui run build",
-    "build:container":"npm --prefix src/container run build",
-    "build:services":"npm --prefix src/services run build",
+    "postinstall": "npm-run-all install:ui install:services install:container",
+    "start:ui": "npm --prefix src/ui run start",
+    "start:container": "npm --prefix src/container run start",
+    "start:services": "npm --prefix src/services run start",
+    "build:ui": "npm --prefix src/ui run build",
+    "build:container": "npm --prefix src/container run build",
+    "build:services": "npm --prefix src/services run build",
+    "install:ui": "cd src/ui && npm install",
+    "install:container": "cd src/container && npm install",
+    "install:services": "cd src/services && npm install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,7 +28,7 @@
     "url": "https://github.com/0x6563/electron-angular/issues"
   },
   "homepage": "https://github.com/0x6563/electron-angular#readme",
-  "dependencies": {  },
+  "dependencies": {},
   "devDependencies": {
     "npm-run-all": "^4.1.5"
   }
