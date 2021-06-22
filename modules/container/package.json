@@ -1,8 +1,8 @@
 {
-  "name": "electron-angular",
+  "name": "container",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "start": "electron .",
     "build": "echo \"Container built\""
@@ -11,6 +11,11 @@
   "license": "ISC",
   "dependencies": {
     "@types/node": "^15.12.2",
-    "electron": "^13.1.2"
+    "electron": "^13.1.2",
+    "tsc-watch": "^4.4.0",
+    "typescript": "^4.3.4"
+  },
+  "devDependencies": {
+    "rxjs": "^7.1.0"
   }
 }

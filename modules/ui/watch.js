@@ -1,17 +1,15 @@
 const http = require('http');
-const path = require('path');
 const UIUrl = 'http:localhost:4200';
-const { Updates, Ready } = require(path.join(__dirname, '../services'));
+let _ready;
 
 module.exports.UIUrl = UIUrl;
-module.exports.UIReady = async function () {
+module.exports.Ready = new Promise(res => _ready = res);
+(async () => {
     while (!(await serverReady())) {
         await wait(2000);
     }
-}
-module.exports.ServicesUpdates = Updates;
-module.exports.ServicesReady = () => Ready;
-
+    _ready();
+})()
 function serverReady() {
     return new Promise((res) => {
         http.get(UIUrl, (resp) => {

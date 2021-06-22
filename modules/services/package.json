@@ -2,9 +2,9 @@
   "name": "electron-angular",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "start": "echo \"services started\"",
+    "start": "echo \"Services Started\"",
     "build": "tsc",
     "test": "nyc mocha src/**/*.spec.ts"
   },
@@ -24,5 +24,10 @@
     "tsconfig-paths": "^3.9.0",
     "tsconfig-paths-webpack-plugin": "^3.5.1",
     "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "@types/electron": "^1.6.10",
+    "clear-module": "^4.1.1",
+    "tsc-watch": "^4.4.0"
   }
 }
